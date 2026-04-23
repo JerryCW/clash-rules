@@ -50,22 +50,10 @@ rules:
   # ====== BT/PT 直连 ======
   - GEOSITE,category-public-tracker,🎯 全球直连
 
-  # ====== 即时通讯 ======
-  - GEOSITE,category-communication,💬 即时通讯
-  - GEOIP,telegram,💬 即时通讯,no-resolve
-
-  # ====== 社交媒体 ======
-  - GEOSITE,category-social-media-!cn,🌐 社交媒体
-  - GEOIP,twitter,🌐 社交媒体,no-resolve
-  - GEOIP,facebook,🌐 社交媒体,no-resolve
-
   # ====== AI 服务 ======
   - GEOSITE,openai,🤖 AI服务
   - GEOSITE,category-ai-!cn,🤖 AI服务
   - DOMAIN-KEYWORD,bedrock-runtime,🤖 AI服务
-
-  # ====== 开发工具 ======
-  - GEOSITE,github,🛠 开发工具
 
   # ====== 流媒体 ======
   - GEOSITE,youtube,🎬 流媒体
@@ -78,6 +66,28 @@ rules:
   - GEOSITE,spotify,🎬 流媒体
   - GEOSITE,bahamut,🎬 流媒体
   - GEOSITE,category-entertainment,🎬 流媒体
+  
+  # ====== Amazon 内网 ======
+  - DOMAIN-SUFFIX,amazon.work,🌐 AmazonWork
+  - DOMAIN-SUFFIX,a2z.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazon.dev,🌐 AmazonWork
+  - DOMAIN-SUFFIX,aws.dev,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazonaws.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,workshops.aws,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazon.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,slack.com,🌐 AmazonWork
+
+  # ====== 即时通讯 ======
+  - GEOSITE,category-communication,💬 即时通讯
+  - GEOIP,telegram,💬 即时通讯,no-resolve
+
+  # ====== 社交媒体 ======
+  - GEOSITE,category-social-media-!cn,🌐 社交媒体
+  - GEOIP,twitter,🌐 社交媒体,no-resolve
+  - GEOIP,facebook,🌐 社交媒体,no-resolve
+
+  # ====== 开发工具 ======
+  - GEOSITE,github,🛠 开发工具
 
   # ====== 游戏 ======
   - GEOSITE,steam,🎮 游戏
@@ -96,16 +106,6 @@ rules:
   # ====== 国内直连 ======
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
-
-  # ====== Amazon 内网 ======
-  - DOMAIN-SUFFIX,amazon.work,🌐 AmazonWork
-  - DOMAIN-SUFFIX,a2z.com,🌐 AmazonWork
-  - DOMAIN-SUFFIX,amazon.dev,🌐 AmazonWork
-  - DOMAIN-SUFFIX,aws.dev,🌐 AmazonWork
-  - DOMAIN-SUFFIX,amazonaws.com,🌐 AmazonWork
-  - DOMAIN-SUFFIX,workshops.aws,🌐 AmazonWork
-  - DOMAIN-SUFFIX,amazon.com,🌐 AmazonWork
-  - DOMAIN-SUFFIX,slack.com,🌐 AmazonWork
 
   # ====== 兜底规则 ======
   - MATCH,🐟 漏网之鱼
