@@ -1,0 +1,53 @@
+rules:
+  # ====== 私有网络 & 局域网 ======
+  - GEOSITE,private,🎯 全球直连
+  - GEOIP,private,🎯 全球直连,no-resolve
+
+  # ====== 订阅源直连 ======
+  - DOMAIN,x.willup.net,🎯 全球直连
+
+  # ====== 即时通讯 ======
+  - GEOSITE,category-communication,💬 即时通讯
+  - GEOIP,telegram,💬 即时通讯,no-resolve
+
+  # ====== 社交媒体 ======
+  - GEOSITE,category-social-media-!cn,🌐 社交媒体
+  - GEOIP,twitter,🌐 社交媒体,no-resolve
+  - GEOIP,facebook,🌐 社交媒体,no-resolve
+
+  # ====== AI 服务 ======
+  - GEOSITE,openai,🤖 ChatGPT
+  - GEOSITE,bing,🎯 全球直连
+  - GEOSITE,category-ai-!cn,🤖 AI服务
+
+  # ====== 开发者工具 ======
+  - GEOSITE,github,🚀 GitHub
+
+  # ====== 流媒体 ======
+  - GEOSITE,youtube,📹 YouTube
+  - GEOSITE,tiktok,🎶 TikTok
+  - GEOSITE,netflix,🎥 Netflix
+  - GEOIP,netflix,🎥 Netflix,no-resolve
+  - GEOSITE,disney,🎥 DisneyPlus
+  - GEOSITE,spotify,🎻 Spotify
+  - GEOSITE,bahamut,📺 Bahamut
+
+  # ====== 大厂服务 ======
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
+  - GEOSITE,google,🇬 谷歌服务
+  - GEOIP,google,🇬 谷歌服务,no-resolve
+
+  # ====== 游戏 ======
+  - GEOSITE,steam,🎮 Steam
+  - GEOSITE,category-games,🎮 游戏平台
+
+  # ====== GFW 兜底 ======
+  - GEOSITE,gfw,🚀 手动选择
+
+  # ====== 国内直连 ======
+  - GEOSITE,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连,no-resolve
+
+  # ====== 兜底规则 ======
+  - MATCH,🐟 漏网之鱼
