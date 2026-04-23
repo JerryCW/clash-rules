@@ -6,6 +6,51 @@ rules:
   # ====== 订阅源直连 ======
   - DOMAIN,x.willup.net,🎯 全球直连
 
+  # ====== 个人常用直连 ======
+  - DOMAIN-KEYWORD,m-team,🎯 全球直连
+  - DOMAIN-KEYWORD,quickconnect,🎯 全球直连
+  - DOMAIN-KEYWORD,synology,🎯 全球直连
+  - DOMAIN-SUFFIX,ui.com,🎯 全球直连
+  - DOMAIN-SUFFIX,adobe.com,🎯 全球直连
+  - DOMAIN-SUFFIX,dell.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bochk.com,🎯 全球直连
+  - DOMAIN-SUFFIX,hsbc.com.hk,🎯 全球直连
+  - DOMAIN-SUFFIX,kaspersky-labs.com,🎯 全球直连
+  - DOMAIN-SUFFIX,kaspersky.com,🎯 全球直连
+  - DOMAIN-KEYWORD,kvs,🎯 全球直连
+
+  # ====== GitHub 镜像/代理直连 ======
+  - DOMAIN-SUFFIX,jsdelivr.net,🎯 全球直连
+  - DOMAIN-SUFFIX,gh-proxy.com,🎯 全球直连
+  - DOMAIN-SUFFIX,ghfast.top,🎯 全球直连
+  - DOMAIN-SUFFIX,ghp.ci,🎯 全球直连
+  - DOMAIN-SUFFIX,ghproxy.cc,🎯 全球直连
+  - DOMAIN-SUFFIX,kgithub.com,🎯 全球直连
+  - DOMAIN-SUFFIX,hf-mirror.com,🎯 全球直连
+
+  # ====== Docker 镜像直连 ======
+  - DOMAIN-SUFFIX,dockerpull.org,🎯 全球直连
+  - DOMAIN-SUFFIX,dockerpull.pw,🎯 全球直连
+  - DOMAIN-SUFFIX,docker.1panel.live,🎯 全球直连
+  - DOMAIN-SUFFIX,docker.unsee.tech,🎯 全球直连
+
+  # ====== IP 查询直连 ======
+  - DOMAIN-SUFFIX,ifconfig.co,🎯 全球直连
+  - DOMAIN-SUFFIX,ipapi.co,🎯 全球直连
+  - DOMAIN-SUFFIX,ipinfo.io,🎯 全球直连
+  - DOMAIN-SUFFIX,api.myip.com,🎯 全球直连
+  - DOMAIN-SUFFIX,checkip.dyndns.org,🎯 全球直连
+
+  # ====== 游戏相关直连 ======
+  - GEOSITE,category-games@cn,🎯 全球直连
+  - DOMAIN-SUFFIX,cm.steampowered.com,🎯 全球直连
+  - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,🎯 全球直连
+  - DOMAIN-SUFFIX,steamserver.net,🎯 全球直连
+  - GEOSITE,category-game-platforms-download,🎯 全球直连
+
+  # ====== BT/PT 直连 ======
+  - GEOSITE,category-public-tracker,🎯 全球直连
+
   # ====== 即时通讯 ======
   - GEOSITE,category-communication,💬 即时通讯
   - GEOIP,telegram,💬 即时通讯,no-resolve
@@ -16,38 +61,59 @@ rules:
   - GEOIP,facebook,🌐 社交媒体,no-resolve
 
   # ====== AI 服务 ======
-  - GEOSITE,openai,🤖 ChatGPT
-  - GEOSITE,bing,🎯 全球直连
+  - GEOSITE,openai,🤖 AI服务
   - GEOSITE,category-ai-!cn,🤖 AI服务
+  - DOMAIN-KEYWORD,bedrock-runtime,🤖 AI服务
 
-  # ====== 开发者工具 ======
-  - GEOSITE,github,🚀 GitHub
+  # ====== 开发工具 ======
+  - GEOSITE,github,🛠 开发工具
 
   # ====== 流媒体 ======
-  - GEOSITE,youtube,📹 YouTube
-  - GEOSITE,tiktok,🎶 TikTok
+  - GEOSITE,youtube,🎬 流媒体
+  - GEOSITE,tiktok,🎬 流媒体
   - GEOSITE,netflix,🎥 Netflix
   - GEOIP,netflix,🎥 Netflix,no-resolve
-  - GEOSITE,disney,🎥 DisneyPlus
-  - GEOSITE,spotify,🎻 Spotify
-  - GEOSITE,bahamut,📺 Bahamut
+  - GEOSITE,disney,🎬 流媒体
+  - GEOSITE,hbo,🎬 流媒体
+  - GEOSITE,primevideo,🎬 流媒体
+  - GEOSITE,spotify,🎬 流媒体
+  - GEOSITE,bahamut,🎬 流媒体
+  - GEOSITE,category-entertainment,🎬 流媒体
+
+  # ====== 游戏 ======
+  - GEOSITE,steam,🎮 游戏
+  - GEOSITE,category-games,🎮 游戏
 
   # ====== 大厂服务 ======
   - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,bing,Ⓜ️ 微软服务
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,google,🇬 谷歌服务
   - GEOIP,google,🇬 谷歌服务,no-resolve
 
-  # ====== 游戏 ======
-  - GEOSITE,steam,🎮 Steam
-  - GEOSITE,category-games,🎮 游戏平台
-
   # ====== GFW 兜底 ======
-  - GEOSITE,gfw,🚀 手动选择
+  - GEOSITE,gfw,♻️ 自动选择
 
   # ====== 国内直连 ======
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
+
+  # ====== Amazon 内网 ======
+  - DOMAIN,midway-auth.amazon.com,🌐 AmazonWork
+  - DOMAIN,autodiscover.exch-apn.amazon.com,🌐 AmazonWork
+  - DOMAIN,sim-ticketing-graphql-fleet.corp.amazon.com,🌐 AmazonWork
+  - DOMAIN,sin-orca.amazon.com,🌐 AmazonWork
+  - DOMAIN,sin-d-orca.amazon.com,🌐 AmazonWork
+  - DOMAIN,sin-c-orca.amazon.com,🌐 AmazonWork
+  - DOMAIN,sin-e-orca.amazon.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,orca.amazon.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,federate.amazon.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazon.work,🌐 AmazonWork
+  - DOMAIN-SUFFIX,a2z.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazon.dev,🌐 AmazonWork
+  - DOMAIN-SUFFIX,workshops.aws,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazon.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,slack.com,🌐 AmazonWork
 
   # ====== 兜底规则 ======
   - MATCH,🐟 漏网之鱼
