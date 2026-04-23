@@ -101,6 +101,8 @@ rules:
   - DOMAIN-SUFFIX,amazon.work,🌐 AmazonWork
   - DOMAIN-SUFFIX,a2z.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazon.dev,🌐 AmazonWork
+  - DOMAIN-SUFFIX,aws.dev,🌐 AmazonWork
+  - DOMAIN-SUFFIX,amazonaws.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,workshops.aws,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazon.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,slack.com,🌐 AmazonWork
