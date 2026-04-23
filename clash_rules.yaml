@@ -99,15 +99,6 @@ rules:
   - GEOIP,cn,🎯 全球直连,no-resolve
 
   # ====== Amazon 内网 ======
-  - DOMAIN,midway-auth.amazon.com,🌐 AmazonWork
-  - DOMAIN,autodiscover.exch-apn.amazon.com,🌐 AmazonWork
-  - DOMAIN,sim-ticketing-graphql-fleet.corp.amazon.com,🌐 AmazonWork
-  - DOMAIN,sin-orca.amazon.com,🌐 AmazonWork
-  - DOMAIN,sin-d-orca.amazon.com,🌐 AmazonWork
-  - DOMAIN,sin-c-orca.amazon.com,🌐 AmazonWork
-  - DOMAIN,sin-e-orca.amazon.com,🌐 AmazonWork
-  - DOMAIN-SUFFIX,orca.amazon.com,🌐 AmazonWork
-  - DOMAIN-SUFFIX,federate.amazon.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazon.work,🌐 AmazonWork
   - DOMAIN-SUFFIX,a2z.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazon.dev,🌐 AmazonWork
