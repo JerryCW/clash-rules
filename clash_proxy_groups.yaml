@@ -1,0 +1,189 @@
+# ============================================
+# 代理分组配置 - 简化版本（无Smart Groups）
+# 架构说明：使用简单的select和fallback组合
+# 适配新订阅格式：[Hy2]/[vless] 协议节点
+# 节点层级：Dynamic（动态IP）< Ultimate（高质量线路）
+# ============================================
+
+proxy-groups:
+  # ============ 地区分组 ============
+  - name: 🇭🇰 香港节点
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    include-all: true
+    filter: "(?i)HK"
+
+  - name: 🇼🇸 台湾节点
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies:
+      - 🇼🇸 台湾Ultimate
+      - 🇼🇸 台湾Dynamic
+
+  - name: 🇼🇸 台湾Ultimate
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: "TW Ultimate"
+
+  - name: 🇼🇸 台湾Dynamic
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: "TW Dynamic"
+
+  - name: 🇺🇸 美国节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: "(?i)US"
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: "(?i)Japan"
+
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: "(?i)SG"
+
+  # ============ 主要选择组 ============
+  - name: 🚀 手动选择
+    type: select
+    proxies:
+      - GY-Private
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇼🇸 台湾节点
+      - GY-Private
+
+  # ============ 应用专用分组 ============
+  - name: 💬 即时通讯
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🌐 社交媒体
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🚀 GitHub
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  # ============ AI 服务分组 ============
+  - name: 🤖 ChatGPT
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🎯 全球直连]
+
+  - name: 🤖 Copilot
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🎯 全球直连]
+
+  - name: 🤖 AI服务
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🎯 全球直连]
+
+  # ============ 流媒体 & 其他 ============
+  - name: 🎶 TikTok
+    type: select
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点]
+
+  - name: 📹 YouTube
+    type: select
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点]
+
+  - name: 🎥 Netflix
+    type: select
+    proxies: [🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, GY-Private]
+
+  - name: 🎥 DisneyPlus
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🎻 Spotify
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 📺 Bahamut
+    type: select
+    proxies: [🇼🇸 台湾节点, 🚀 手动选择, 🎯 全球直连]
+
+  - name: 🎮 Steam
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🇬 谷歌服务
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🌎 国外媒体
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🎯 全球直连]
+
+  - name: 🔀 非标端口
+    type: select
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🎯 全球直连]
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies: [♻️ 自动选择, 🎯 全球直连]
+
+  - name: 🌐 AmazonWork
+    type: select
+    proxies: [🎯 全球直连]
+
+  - name: 🎯 全球直连
+    type: select
+    proxies: [DIRECT]
