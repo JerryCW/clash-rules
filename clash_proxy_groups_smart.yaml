@@ -1,0 +1,180 @@
+# ============================================
+# 代理分组配置 - Smart Groups 版本
+# 适配新订阅格式：[Hy2]/[vless] 协议节点
+# 特点：智能分组，自动选择最优节点
+# ============================================
+
+proxy-groups:
+  # ============ 智能地区分组 ============
+  - name: 🇭🇰 香港智能
+    type: smart
+    uselightgbm: true
+    collectdata: true
+    strategy: sticky-sessions
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    per-asn: true
+    sample-rate: 1
+    include-all: true
+    filter: "(?i)HK"
+
+  - name: 🇺🇸 美国智能
+    type: smart
+    uselightgbm: true
+    collectdata: true
+    strategy: sticky-sessions
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    per-asn: true
+    sample-rate: 1
+    include-all: true
+    filter: "(?i)US"
+
+  - name: 🇯🇵 日本智能
+    type: smart
+    uselightgbm: true
+    collectdata: true
+    strategy: sticky-sessions
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    per-asn: true
+    sample-rate: 1
+    include-all: true
+    filter: "(?i)Japan"
+
+  - name: 🇸🇬 新加坡智能
+    type: smart
+    uselightgbm: true
+    collectdata: true
+    strategy: sticky-sessions
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    per-asn: true
+    sample-rate: 1
+    include-all: true
+    filter: "(?i)SG"
+
+  - name: 🇼🇸 台湾智能
+    type: smart
+    uselightgbm: true
+    collectdata: true
+    strategy: sticky-sessions
+    policy-priority: "Ultimate:1;Dynamic:0.5"
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    per-asn: true
+    sample-rate: 1
+    include-all: true
+    filter: "(?i)TW"
+
+  # ============ 主要选择组 ============
+  - name: 🚀 手动选择
+    type: select
+    proxies: [🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, GY-Private]
+
+  - name: ♻️ 自动选择
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇭🇰 香港智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇺🇸 美国智能, 🇼🇸 台湾智能, GY-Private]
+
+  # ============ 应用专用分组 ============
+  - name: 💬 即时通讯
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🌐 社交媒体
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🚀 GitHub
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  # ============ AI 服务分组 ============
+  - name: 🤖 ChatGPT
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇸🇬 新加坡智能, 🇺🇸 美国智能, 🇯🇵 日本智能, 🎯 全球直连]
+
+  - name: 🤖 Copilot
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇸🇬 新加坡智能, 🇺🇸 美国智能, 🇯🇵 日本智能, 🎯 全球直连]
+
+  - name: 🤖 AI服务
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    proxies: [🇸🇬 新加坡智能, 🇺🇸 美国智能, 🇯🇵 日本智能, 🎯 全球直连]
+
+  # ============ 流媒体 & 其他 ============
+  - name: 🎶 TikTok
+    type: select
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能]
+
+  - name: 📹 YouTube
+    type: select
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能]
+
+  - name: 🎥 Netflix
+    type: select
+    proxies: [🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, GY-Private]
+
+  - name: 🎥 DisneyPlus
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🎻 Spotify
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 📺 Bahamut
+    type: select
+    proxies: [🇼🇸 台湾智能, 🚀 手动选择, 🎯 全球直连]
+
+  - name: 🎮 Steam
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🇬 谷歌服务
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🌎 国外媒体
+    type: select
+    proxies: [♻️ 自动选择, 🇭🇰 香港智能, 🇺🇸 美国智能, 🇸🇬 新加坡智能, 🇯🇵 日本智能, 🇼🇸 台湾智能, 🎯 全球直连]
+
+  - name: 🔀 非标端口
+    type: select
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🎯 全球直连]
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies: [♻️ 自动选择, 🎯 全球直连]
+
+  - name: 🌐 AmazonWork
+    type: select
+    proxies: [🎯 全球直连]
+
+  - name: 🎯 全球直连
+    type: select
+    proxies: [DIRECT]
