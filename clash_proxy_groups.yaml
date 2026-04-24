@@ -14,30 +14,14 @@ proxy-groups:
     include-all: true
     filter: "(?i)HK"
 
-  # 台湾 — Hy2 Dynamic ×4 + vless Ultimate ×4，Ultimate 优先
+  # 台湾 — Hy2 Dynamic ×20
   - name: 🇼🇸 台湾节点
-    type: fallback
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-    proxies:
-      - 🇼🇸 台湾Ultimate
-      - 🇼🇸 台湾Dynamic
-
-  - name: 🇼🇸 台湾Ultimate
     type: url-test
     url: https://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     include-all: true
-    filter: "TW Ultimate"
-
-  - name: 🇼🇸 台湾Dynamic
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    include-all: true
-    filter: "TW Dynamic"
+    filter: "(?i)TW"
 
   # 美国 — vless+REALITY Ultimate ×8
   - name: 🇺🇸 美国节点
