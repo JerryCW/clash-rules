@@ -112,5 +112,9 @@ rules:
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
 
+  # ====== 特殊端口 ======
+  - DST-PORT,123,🎯 全球直连    # NTP 时间同步
+  - DST-PORT,5223,🎯 全球直连   # Apple APNs 推送通知
+
   # ====== 兜底规则 ======
   - MATCH,🐟 漏网之鱼
