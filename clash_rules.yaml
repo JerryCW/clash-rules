@@ -3,10 +3,6 @@ rules:
   - GEOSITE,private,🎯 全球直连
   - GEOIP,private,🎯 全球直连,no-resolve
 
-  # ====== 公共 DNS 直连 ======
-  - IP-CIDR,1.1.1.1/32,🎯 全球直连,no-resolve
-  - IP-CIDR,8.8.8.8/32,🎯 全球直连,no-resolve
-
   # ====== 订阅源直连 ======
   - DOMAIN,x.willup.net,🎯 全球直连
 
