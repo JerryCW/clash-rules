@@ -77,6 +77,7 @@ rules:
   - DOMAIN-SUFFIX,aws.dev,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazonaws.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,workshops.aws,🌐 AmazonWork
+  - DOMAIN-SUFFIX,api.aws,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazon.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,slack.com,🌐 AmazonWork
 
