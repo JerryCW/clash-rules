@@ -66,7 +66,7 @@ rules:
   - GEOSITE,spotify,🎬 流媒体
   - GEOSITE,bahamut,🎬 流媒体
   - GEOSITE,category-entertainment,🎬 流媒体
-  
+
   # ====== Amazon 内网 ======
   - DOMAIN-SUFFIX,amazon.work,🌐 AmazonWork
   - DOMAIN-SUFFIX,a2z.com,🌐 AmazonWork
@@ -95,6 +95,7 @@ rules:
 
   # ====== 大厂服务 ======
   - GEOSITE,apple,🍎 苹果服务
+  - GEOIP,apple,🍎 苹果服务,no-resolve
   - GEOSITE,bing,Ⓜ️ 微软服务
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,google,🇬 谷歌服务
