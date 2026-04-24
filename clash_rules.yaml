@@ -58,6 +58,10 @@ rules:
   - GEOSITE,openai,🤖 AI服务
   - GEOSITE,category-ai-!cn,🤖 AI服务
   - DOMAIN-KEYWORD,bedrock-runtime,🤖 AI服务
+  - DOMAIN-SUFFIX,kiro.dev,🤖 AI服务
+  - DOMAIN,q.us-east-1.amazonaws.com,🤖 AI服务
+  - DOMAIN,q.eu-central-1.amazonaws.com,🤖 AI服务
+  - DOMAIN-KEYWORD,kiro,🤖 AI服务
 
   # ====== 流媒体 ======
   - GEOSITE,youtube,🎬 流媒体
