@@ -39,7 +39,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     include-all: true
-    filter: "(?i)Japan"
+    filter: "(?i)JP"
 
   # 新加坡 — Hy2 ×1 + vless Ultimate ×8
   - name: 🇸🇬 新加坡节点
