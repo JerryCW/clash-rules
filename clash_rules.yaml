@@ -80,6 +80,8 @@ rules:
   - DOMAIN-SUFFIX,api.aws,🌐 AmazonWork
   - DOMAIN-SUFFIX,amazon.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,slack.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,chime.aws,🌐 AmazonWork
+  - DOMAIN-SUFFIX,zoom.us,🌐 AmazonWork
 
   # ====== 即时通讯 ======
   - GEOSITE,category-communication,💬 即时通讯
@@ -116,6 +118,10 @@ rules:
   # ====== 特殊端口 ======
   - DST-PORT,123,🎯 全球直连    # NTP 时间同步
   - DST-PORT,5223,🎯 全球直连   # Apple APNs 推送通知
+  - DST-PORT,3478,🎯 全球直连   # STUN (Zoom/Teams/Chime 屏幕共享信令)
+  - DST-PORT,3479,🎯 全球直连   # TURN 媒体中继
+  - DST-PORT,3480,🎯 全球直连   # TURN 媒体中继
+  - DST-PORT,3481,🎯 全球直连   # TURN 媒体中继
 
   # ====== 兜底规则 ======
   - MATCH,🐟 漏网之鱼
