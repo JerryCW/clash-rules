@@ -137,7 +137,7 @@ proxy-groups:
 
   - name: 🐟 漏网之鱼
     type: select
-    proxies: [♻️ 自动选择, 🎯 全球直连]
+    proxies: [♻️ 自动选择, 🚀 手动选择, 🎯 全球直连]
 
   - name: 🎯 全球直连
     type: select
