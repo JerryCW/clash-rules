@@ -26,6 +26,7 @@ rules:
   - DOMAIN-SUFFIX,kaspersky-labs.com,🎯 全球直连
   - DOMAIN-SUFFIX,kaspersky.com,🎯 全球直连
   - DOMAIN-SUFFIX,kinesisvideo.ap-southeast-1.amazonaws.com,🎯 全球直连
+  - DOMAIN-SUFFIX,jerrpot.com,🎯 全球直连
 
   # ====== GitHub 镜像/代理直连 ======
   - DOMAIN-SUFFIX,jsdelivr.net,🎯 全球直连
