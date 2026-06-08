@@ -93,6 +93,7 @@ rules:
   - DOMAIN-SUFFIX,zoom.us,🌐 AmazonWork
   - DOMAIN-SUFFIX,teams.microsoft.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,teams.live.com,🌐 AmazonWork
+  - DOMAIN-SUFFIX,aidevops.global.app.aws,🌐 AmazonWork
 
   # ====== 即时通讯 ======
   - GEOSITE,category-communication,💬 即时通讯
