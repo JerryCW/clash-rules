@@ -96,11 +96,8 @@ proxy-groups:
     proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🇬🇧 英国节点, 🎯 全球直连]
 
   - name: 🤖 AI服务
-    type: fallback
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 100
-    proxies: [🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🇬🇧 英国节点, GY-Private]
+    type: select
+    proxies: [♻️ 自动选择, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🇬🇧 英国节点, GY-Private]
 
   - name: 🎬 流媒体
     type: select
