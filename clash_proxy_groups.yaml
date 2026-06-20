@@ -100,7 +100,7 @@ proxy-groups:
     url: https://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 100
-    proxies: [🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🇬🇧 英国节点, GY-Private]
+    proxies: [🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇼🇸 台湾节点, 🇬🇧 英国节点, GY-Private]
 
   - name: 🎬 流媒体
     type: select
