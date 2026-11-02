@@ -94,6 +94,7 @@ rules:
   - DOMAIN-SUFFIX,teams.microsoft.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,teams.live.com,🌐 AmazonWork
   - DOMAIN-SUFFIX,aidevops.global.app.aws,🌐 AmazonWork
+  - DOMAIN-SUFFIX,us-east-1.desktop.enterprise.quick.aws.com,🌐 AmazonWork
 
   # ====== 即时通讯 ======
   - GEOSITE,category-communication,💬 即时通讯
